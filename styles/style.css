@@ -1,0 +1,179 @@
+﻿html {
+    height: 100%;
+}
+body {
+    padding-bottom: 5em;
+}
+#uiview
+{
+    font-size: 16px;
+}
+.loading-layer
+{
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    z-index: 1040;
+    position: fixed;
+    top: 0;
+    opacity: .7;
+    text-align: center;
+}
+.loading-layer img
+{
+    position: relative;
+    width: 8%;
+    top: calc(50% - 8%);
+}
+.ng-hide
+{
+    display: none !important;
+}
+.ng-show
+{
+    display: block !important;
+}
+.container-fluid {
+    height: inherit;
+}
+.container-fluid .header {
+    padding: 2em 0 1em 0;
+}
+.container-fluid .pre-reg-description,
+.container-fluid .pre-reg-explanation,
+.container-fluid .pre-reg-caution {
+    padding: 0.5em;
+    font-size: 100%;
+}
+.container-fluid .pre-reg-caution {
+    padding-top: 2em;
+}
+.container-fluid .pre-reg-caution .alert {
+    border-color: #a94442;
+}
+.navbar {
+    background-color: #fff;
+    border: none;
+    min-height: 4em;
+}
+.navbar-btn {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.btn{
+    font-size: 90%;
+}
+.form-horizontal .control-label {
+    text-align: left;
+}
+.form-group label {
+    font-weight: normal;
+}
+.queue-page .header {
+    padding-bottom: .5em;
+}
+.queue-page .service-select {
+    /*padding: 2em 1em 2em 1em;*/
+    display: table-cell;
+    vertical-align: middle;
+}
+.queue-page .service-center-select {
+    padding: 0.5em;
+    margin-bottom: 0.7em;
+    font-weight: bold;
+        background-color: #003a68!important;
+    color: white;
+}
+.print .header {
+    padding-bottom: 3em;
+}
+.print .explanation {
+    padding-top: 2.5em;
+}
+.print__text__numberQueue{
+    text-decoration: underline;
+}
+.print__text__registrationTime{
+    text-decoration: underline;
+}
+.print__text__registrationDate{
+    text-decoration: underline;
+}
+.print__text__numberQueue__Value{
+    font-weight: bold;
+    padding-left: 5pt;
+}
+.print__text__registrationTime__Value{
+    font-weight: bold;
+    padding-left: 5pt;
+}
+.print__text__registrationDate__Value{
+    font-weight: bold;
+    padding-left: 5pt;
+}
+.print__header__img {
+    width: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.print__header__block{
+    font-size: 80%;
+    font-weight: bold;
+}
+.print__message__block{
+    font-style: italic;
+}
+.print__note__block__element__1{
+    color: red;
+    font-weight: bold;
+}
+.print .alert {
+    margin-bottom: 0;
+    background-color: #003a68!important;
+    color: white;
+}
+.profile input.ng-invalid.ng-touched:not(.no-validate) {
+    border-color: #a94442;
+}
+.profile input.ng-valid.ng-touched:not(.no-validate) {
+    border-color: #3c763d;
+}
+.dropdown-menu > li > a {
+    white-space: normal;
+}
+.service-select-wrap{
+    color: white;
+    background-color: #003a68!important;
+    border-color: #bce8f1;
+    min-height: 50px;
+    max-height: 50px;
+    display: table;
+}
+.serviceName {
+        text-align: center;
+        margin: 2%;
+}
+/*
+.slidesItem {
+    height: 150px!important;
+    margin-bottom: 5px !important;
+    text-overflow: ellipsis;
+}*/
+ .btn-primary, .btn-success {
+     background-color: #003a68!important;
+ }
+ .startPreReg {
+        background-color: #003a68!important;
+}
+.group-service-description {
+    min-height: 70px;
+    max-height: 70px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#documentNum {
+    text-align: center;
+    font-size: 24px;
+}

@@ -1,0 +1,32 @@
+﻿<div class="container-fluid services">
+    <div class="row">
+        <div class="header col-sm-12">
+            <h2 class="text-center">{{L('queue.service.selectService')}}</h2>
+        </div>
+    </div>
+    <div class="row row-cols-2">
+            <div ng-repeat="slide in joinedGroupsAndServices | orderBy:'slide.isGroup': 0">
+                <div ng-class="(slides.length == 1 && slide.items.length <= slideItemsCount / 2) ? 
+                                                                                                    'col-11 col-sm-12 col-md-12' : 
+                                                                                                    'col-11 col-sm-12 col-md-6' "
+                    class="slidesItem">
+                    <div class="alert alert-success text-center service-select-wrap col-xs-12"
+                        ng-click="slide.isGroup ? getGroupsAndServices(serviceCenter.id, slide.groupId,false,slide.hostNumber) : selectService(slide,slide.hostNumber)">
+                        <div class="text-center service-select">
+                            <p ng-bind-html="slide.description" class="group-service-description"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="navbar navbar-default /*navbar-fixed-bottom*/">
+        <div class="container-fluid">
+            <div class="text-center">
+                <button ng-click="getGroupsAndServices(serviceCenter.id, groupId, true, hostNumber)" type="button"
+                        class="btn btn-primary  btn-lg navbar-btn">
+                    {{L('queue.service.back')}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

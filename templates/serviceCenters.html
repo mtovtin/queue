@@ -1,0 +1,30 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="header col-sm-12">
+            <h4 class="text-center">{{L('queue.serviceCenter.preEntry')}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 text-center">
+            <h4>{{L('queue.serviceCenter.selectDepartment')}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10">
+            <div ng-repeat="serviceCenter in serviceCenters" ng-click="selectServiceCenter(serviceCenter)"
+                 class="alert alert-info text-center service-center-select">
+                {{serviceCenter.name}}
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-default /*navbar-fixed-bottom*/">
+        <div class="container-fluid">
+            <div class="col-xs-offset-2 col-xs-8">
+                <button ng-click="changeState('profile')" type="button"
+                        class="btn btn-primary btn-lg btn-block navbar-btn">
+                    {{L('queue.serviceCenter.back')}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

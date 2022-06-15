@@ -1,0 +1,101 @@
+﻿<div class="container-fluid profile">
+    <div class="row">
+        <div class="header col-xs-12">
+            <h4 class="text-center">{{L('profile.visitorProfile')}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10">
+            <form name="profileForm" class="form-horizontal" novalidate>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-4 control-label">{{L('profile.lastName')}}*</label>
+                    <div class="col-sm-8">
+                        <input ng-model="profile.firstName" id="firstName" name="firstName"
+                        class="form-control" type="text" ng-required="true"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-4 control-label">{{L('profile.firstName')}}*</label>
+                    <div class="col-sm-8">
+                        <input ng-model="profile.lastName" id="lastName" name="lastName"
+                        class="form-control" type="text" ng-required="true"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="patronymic" class="col-sm-4 control-label">{{L('profile.patronymic')}}*</label>
+                    <div class="col-sm-8">
+                        <input ng-model="profile.patronymic" id="patronymic" name="patronymic"
+                        class="form-control" type="text" ng-required="true"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="legalPersonName" class="col-sm-4 control-label">{{L('profile.legalPersonName')}}</label>
+                    <div class="col-sm-8">
+                        <input ng-model="profile.legalPersonName" id="legalPersonName" name="legalPersonName"
+                               class="form-control no-validate" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-sm-4 control-label">{{L('profile.phone')}}*</label>
+                    <div class="col-sm-8">
+                        <input type="text" ng-model="profile.phone" id="phone" name="phone" ui-mask="+38 (999) 999-99-99" ui-mask-placeholder ui-mask-placeholder-char="_"
+                        ui-options="{clearOnBlur : false}" class="form-control" required="true"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-4 control-label">{{L('profile.email')}}</label>
+                    <div class="col-sm-8">
+                        <input ng-model="profile.email" id="email" name="email" class="form-control" type="text"
+                        ng-required="true">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity" class="col-sm-4 control-label">{{L('profile.quantity')}}</label>
+                    <div class="col-sm-8">
+                               <select ng-model="profile.qantity" id="quantity" name="quantity" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                              </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="checkbox">
+                            <label for="isAcceptAgreement">
+                                <input type="checkbox" ng-model="isAcceptAgreement" id="isAcceptAgreement" ng-required="true"/>
+                                {{L('profile.acceptTerms')}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar navbar-default /*navbar-fixed-bottom*/">
+                    <div class="container-fluid row row-cols-2">
+                        <div class="col-offset-2 col-sm-offset-2 col-md-offset-2 col-4 col-sm-4 col-md-4">
+                            <button ng-click="home()" type="button"
+                                    class="btn btn-primary btn-lg btn-block navbar-btn">
+                                {{L('profile.back')}}
+                            </button>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4">
+                            <button ng-click="queueAdd(profileForm, profile)" ng-disabled="profileForm.$invalid"
+                                    type="submit" class="btn btn-primary btn-lg btn-block navbar-btn">
+                                {{L('profile.startPreRegistration')}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

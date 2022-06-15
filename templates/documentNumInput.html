@@ -1,0 +1,36 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="header col-xs-12">
+            <h4 class="text-center">{{L('queue.documentNumInput')}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10">
+            <form name="documentNumForm" class="form-horizontal" novalidate>                
+                <div class="form-group">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <input type="text" ng-model="documentNum" id="documentNum" name="documentNum" ui-mask="3010-99-999999" ui-mask-placeholder ui-mask-placeholder-char="_"
+                               ui-options="{clearOnBlur : false}" class="form-control" required="true" />
+                    </div>
+                </div>
+                
+                <div class="navbar navbar-default /*navbar-fixed-bottom*/">
+                    <div class="container-fluid">
+                        <div class="col-xs-6">
+                            <button ng-click="getGroupsAndServices(serviceCenter.id, groupId, true, hostNumber, true)" type="button"
+                                    class="btn btn-primary btn-lg btn-block navbar-btn">
+                                {{L('queue.service.back')}}
+                            </button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button ng-click="addDocumentNum(documentNum)" ng-disabled="documentNumForm.$invalid"
+                                    type="submit" class="btn btn-primary btn-lg btn-block navbar-btn">
+                                {{L('queue.continue')}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

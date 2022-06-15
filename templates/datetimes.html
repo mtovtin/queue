@@ -1,0 +1,79 @@
+﻿<div class="container-fluid datetimes">
+    <div class="row">
+        <div class="header col-sm-12">
+            <h2 class="text-center">{{L('queue.datetime.selectDateTime')}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <uib-carousel no-wrap="noWrapSlides" template-url="/scripts/webpreregistration/templates/calendar.html">
+            <uib-slide ng-repeat="slide in calendarSlides" active="slide.active">
+                <div class="col-sm-12">
+                <p class="month-header text-center">{{slide.header}}</p>
+                    <table border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
+                        <tbody>
+                        <tr class="reverse" ng-repeat="date in slide.dates track by $index">
+                            <td ng-if="date.date === undefined" class="table-header-description">
+                                {{date.d| date: "EEEE dd MMM"}}
+                            </td>
+                            <td ng-if="date.date === undefined"
+                                ng-repeat="t in getEmptyArray(slide.maxTimesCount) track by $index"
+                                class="isnt-available">
+                                <span>{{L('queue.datetime.dateIsNotAvailable')}}</span>
+                            </td>
+
+                            <td ng-if="date.date !== undefined" class="table-header-description">
+                                {{date.date| date: "EEEE dd MMM"}}
+                            </td >
+                            <td ng-if="date.date !== undefined && !date.isWeekend"
+                                ng-repeat="time in date.times track by $index"
+                                ng-class="time.isAllow ? 'time-is-allow': ( time.isScheduleBreak ? 'time-is-break' : 'time-isnt-allow')"
+                                ng-click="selectDateTime(date, time)">
+                                <span>{{time.time | date: "HH:mm": "-0000"}}</span>
+                                <td ng-if="date.times.length < slide.maxTimesCount && !date.isWeekend"
+                                    ng-repeat="t in getEmptyArray(slide.maxTimesCount - date.times.length) track by $index">
+                                    <span>&nbsp;</span>
+                                </td>
+                            </td>
+                            <td ng-if="date.date !== undefined && date.notAvailableDate"
+                                ng-repeat="t in getEmptyArray(slide.maxTimesCount) track by $index"
+                                class="isnt-available">
+                                <span>{{L('queue.datetime.dateIsNotAvailable')}}</span>
+                            </td>
+
+                            <td ng-if="date.isWeekend"
+                                ng-repeat="t in getEmptyArray(slide.maxTimesCount) track by $index"
+                                class="is-weekend">
+                                <span>{{L('queue.datetime.weekend')}}</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </uib-slide>
+        </uib-carousel>   
+    </div>
+    <div class="navbar navbar-default /*navbar-fixed-bottom*/">
+        <div class="container-fluid">
+            <div class="text-center">
+                <div class="col col-xs-12 calendar-buttons-wrap">
+                    <button ng-click="prev()" ng-show="calendarSlides.length > 1"
+                        class="btn btn-success">{{L('queue.datetime.prevWeek')}}</button>       
+                    <button ng-click="setActive(0)" ng-show="calendarSlides.length > 1"
+                        class="btn btn-success">{{L('queue.datetime.currentWeek')}}</button>       
+                    <button ng-click="next()" ng-show="calendarSlides.length > 1"
+                        class="btn btn-success">{{L('queue.datetime.nextWeek')}}</button>
+                </div>
+            <button ng-click="getGroupsAndServices(serviceCenter.id, groupId, true)" type="button"
+                    class="btn btn-success btn-lg navbar-btn">
+                {{L('queue.datetime.back')}}
+            </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    body {
+        padding-bottom: 6em;
+    }
+</style>
